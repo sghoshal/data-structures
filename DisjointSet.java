@@ -12,17 +12,6 @@ public class DisjointSet {
     public Map<Integer, Node> map;
     public int connected;           // Tracks the number of connected components
 
-
-    private static class Node {
-        public int val;
-        public Node parent;
-        public int rank;            // The depth of the tree from this node.
-
-        public Node(int val) {
-            this.val = val;
-        }
-    }
-
     public DisjointSet() {
         this.map = new HashMap<Integer, Node>();
     }
@@ -107,6 +96,16 @@ public class DisjointSet {
         // After union, the connected components reduce as they get merged.
         connected--;
         return true;
+    }
+
+    private static class Node {
+        public int val;
+        public Node parent;
+        public int rank;            // The depth of the tree from this node.
+
+        public Node(int val) {
+            this.val = val;
+        }
     }
 
     public static void main(String[] args) {
